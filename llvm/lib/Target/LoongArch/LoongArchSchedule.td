@@ -33,49 +33,49 @@ def ReadIALSL32       : SchedRead;  // 32-bit integer ALSL operations on LA64
 //===----------------------------------------------------------------------===//
 // ALSL.W  ALSL.WU                  Sched<[WriteIALSL, ReadIALSL32, ReadIALSL32]>
 // ALSL.D                           Sched<[WriteIALSL, ReadIALSL, ReadIALSL]>
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 
 def WriteIPCAdd       : SchedWrite; // LoongArch PC ADD instruction operation
 def ReadIPCAdd        : SchedRead;  // LoongArch PC ADD instruction operation
 //===----------------------------------------------------------------------===//
 // PCADDI  PCADDUI12I  PCADDU18I  PCALAU12I   Sched<[WriteIPCAdd]>
-//===----------------------------------------------------------------------===// 
+//===----------------------------------------------------------------------===//
 
 def WriteIMUL         : SchedWrite; // 32 or 64-bit integer MUL operations
 def WriteIMUL32       : SchedWrite; // 32-bit integer MUL operations on LA64
 def ReadIMUL          : SchedRead;  // 32 or 64-bit integer MUL operations
 def ReadIMUL32        : SchedRead;  // 32-bit integer MUL operations on LA64
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 // MUL.W  MULH.W  MULH.WU           Sched<[WriteIMUL, ReadIMUL32, ReadIMUL32]>
 // MUL.D  MULH.D  MULH.DU           Sched<[WriteIMUL, ReadIMUL, ReadIMUL]>
 // MULW.D.W  MULW.D.WU              Sched<[WriteIMUL, ReadIMUL32, ReadIMUL32]>
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 
 def WriteIDIV         : SchedWrite; // 32 or 64-bit integer DIV operations
 def WriteIDIV32       : SchedWrite; // 32-bit integer DIV operations on LA64
 def ReadIDIV          : SchedRead;  // 32 or 64-bit integer DIV operations
 def ReadIDIV32        : SchedRead;  // 32-bit integer DIV operations on LA64
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 // DIV.W  MOD.W  DIV.WU  MOD.WU     Sched<[WriteIDIV, ReadIDIV32, ReadIDIV32]>
 // DIV.D  MOD.D  DIV.DU  MOD.DU     Sched<[WriteIDIV, ReadIDIV, ReadIDIV]>
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 
 def WriteIShift       : SchedWrite; // 32 or 64-bit Shift operations
 def WriteIShift32     : SchedWrite; // 32-bit Shift operations on LA64
 def ReadIShift        : SchedRead;  // 32 or 64-bit Shift operations
 def ReadIShift32      : SchedRead;  // 32-bit Shift operations on LA64
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 // SLL.W  SRL.W  SRA.W  ROTR.W      Sched<[WriteIShift, ReadIShift32, ReadIShift32]>
 // SLLI.W SRLI.W SRAI.W ROTRI.W     Sched<[WriteIShift, ReadIShift32]>
 // SLL.D  SRL.D  SRA.D  ROTR.D      Sched<[WriteIShift, ReadIShift, ReadIShift]>
 // SLLI.D SRLI.D SRAI.D ROTRI.D     Sched<[WriteIShift, ReadIShift]>
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 
 def WriteIEXT         : SchedWrite; // 32 or 64-bit EXT operations
 def ReadIEXT          : SchedRead;  // 32 or 64-bit EXT operations
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 // EXT.W.B  EXT.W.H                 Sched<[WriteIEXT, ReadIEXT]>
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 
 def WriteICL          : SchedWrite; // 32 or 64-bit CLO/CLZ operations
 def WriteICL32        : SchedWrite; // 32-bit CLO/CLZ operations on LA64
@@ -85,40 +85,40 @@ def ReadICL           : SchedRead;  // 32 or 64-bit CLO/CLZ operations
 def ReadICL32         : SchedRead;  // 32-bit CLO/CLZ operations on LA64
 def ReadICT           : SchedRead;  // 32 or 64-bit CTO/CTZ operations
 def ReadICT32         : SchedRead;  // 32-bit CTO/CTZ operations on LA64
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 // CLO.W  CLZ.W                     Sched<[WriteICL, ReadICL32]>
 // CTO.W  CTZ.W                     Sched<[WriteICT, ReadICT32]>
 // CLO.D  CLZ.D                     Sched<[WriteICL, ReadICL]>
 // CTO.D  CTZ.D                     Sched<[WriteICT, ReadICT]>
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 
 def WriteIBytePick    : SchedWrite; // 32 or 64-bit BytePick operations
 def WriteIBytePick32  : SchedWrite; // 32-bit BytePick operations on LA64
 def ReadIBytePick     : SchedRead;  // 32 or 64-bit BytePick operations
 def ReadIBytePick32   : SchedRead;  // 32-bit BytePick operations on LA64
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 // BYTEPICK.W  Sched<[WriteIBytePick, ReadIBytePick32, ReadIBytePick32]>
 // BYTEPICK.D  Sched<[WriteIBytePick, ReadIBytePick, ReadIBytePick]>
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 
 def WriteIRev         : SchedWrite; // 32 or 64-bit RevB operations
 def WriteIRev32       : SchedWrite; // 32-bit RevB operations on LA64
 def ReadIRev          : SchedRead;  // 32 or 64-bit RevB operations
 def ReadIRev32        : SchedRead;  // 32-bit RevB operations on LA64
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 // REVB.2H                          Sched<[WriteIRev, ReadIRev32]>
 // REVB.4H  REVB.2W  REVB.D         Sched<[WriteIRev, ReadIRev]>
 // REVH.2W  REVH.D                  Sched<[WriteIRev, ReadIRev]>
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 
 def WriteIBitRev      : SchedWrite; // 32 or 64-bit BitRev operations
 def WriteIBitRev32    : SchedWrite; // 32-bit BitRev operations on LA64
 def ReadIBitRev       : SchedRead;  // 32 or 64-bit BitRev operations
 def ReadIBitRev32     : SchedRead;  // 32-bit BitRev operations on LA64
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 // BITREV.4B                        Sched<[WriteIBitRev, ReadIBitRev32]>
 // BITREV.8B  BITREV.W  BITREV.D    Sched<[WriteIBitRev, ReadIBitRev]>
-//===----------------------------------------------------------------------===//   
+//===----------------------------------------------------------------------===//
 
 def WriteIBstrins     : SchedWrite; // 32 or 64-bit Bstrins operations
 def WriteIBstrins32   : SchedWrite; // 32-bit Bstrins operations on LA64
@@ -141,7 +141,7 @@ def ReadIBstrPick32   : SchedRead;  // 32-bit BstrPick operations on LA64
 def WriteIMASK        : SchedWrite; // 32 or 64-bit MASK operations
 def ReadIMASK         : SchedRead;  // 32 or 64-bit MASK operations
 //===----------------------------------------------------------------------===//
-// MASKEQZ  MASKNEZ   Sched<[WriteIMASK, ReadIMASK]>
+// MASKEQZ  MASKNEZ   Sched<[WriteIMASK, ReadIMASK, ReadIMASK]>
 //===----------------------------------------------------------------------===//
 
 def WriteIJump        : SchedWrite; // integer Jump
@@ -150,6 +150,7 @@ def ReadIJump         : SchedRead;  // integer Jump
 // BEQ BNE BLT BGE BLTU BGEU        Sched<[WriteIJump, ReadIJump, ReadIJump]>
 // BEQZ BNEZ                        Sched<[WriteIJump, ReadIJump]>
 // B BL                             Sched<[WriteIJump]>
+// JIRL                             Sched<[WriteIJump, ReadIJump]>
 //===----------------------------------------------------------------------===//
 
 def WriteLD           : SchedWrite; // Load  reg+imm
@@ -211,7 +212,7 @@ def ReadFDIV          : SchedRead;  // floating-point divide
 //===----------------------------------------------------------------------===//
 
 def WriteFMADD        : SchedWrite; // floating-point fused multiply-add
-def ReadFMADD         : SchedRead;  // floating-point fused multiply-add 
+def ReadFMADD         : SchedRead;  // floating-point fused multiply-add
 //===----------------------------------------------------------------------===//
 // FMADD.S  FMADD.D   Sched<[WriteFMADD, ReadFMADD, ReadFMADD, ReadFMADD]>
 // FMSUB.S  FMSUB.D   Sched<[WriteFMADD, ReadFMADD, ReadFMADD, ReadFMADD]>

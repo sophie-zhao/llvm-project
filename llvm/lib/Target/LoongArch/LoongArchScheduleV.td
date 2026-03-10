@@ -11,7 +11,7 @@
 /// Vector instruction - LSX / LASX
 
 
-/// Vector instruction - integer 
+/// Vector instruction - integer
 
 def WriteVALU128         : SchedWrite;   // 128-bit integer ALU
 def WriteVALU256         : SchedWrite;   // 256-bit integer ALU
@@ -400,7 +400,7 @@ def ReadVSHIFTN256       : SchedRead;    // 256-bit integer SRLN / SRAN
 //===----------------------------------------------------------------------===//
 // VSRLN.B/H/W.H/W/D   Sched<[WriteVSHIFTN128, ReadVSHIFTN128, ReadVSHIFTN128]>
 // VSRAN.B/H/W.H/W/D   Sched<[WriteVSHIFTN128, ReadVSHIFTN128, ReadVSHIFTN128]>
-// XVSRLN.B/H/W.H/W/D  Sched<[WriteVSHIFTN256, ReadVSHIFTN256, ReadVSHIFTN256]> 
+// XVSRLN.B/H/W.H/W/D  Sched<[WriteVSHIFTN256, ReadVSHIFTN256, ReadVSHIFTN256]>
 // XVSRAN.B/H/W.H/W/D  Sched<[WriteVSHIFTN256, ReadVSHIFTN256, ReadVSHIFTN256]>
 //===----------------------------------------------------------------------===//
 
@@ -613,7 +613,7 @@ def ReadVFRSTP256         : SchedRead;    // 256-bit integer BITREV
 
 
 
-/// Vector instruction - Floating-point 
+/// Vector instruction - Floating-point
 
 def WriteVFALU128         : SchedWrite;   // 128-bit FADD FSUB FMUL
 def WriteVFALU256         : SchedWrite;   // 256-bit FADD FSUB FMUL
@@ -1070,10 +1070,10 @@ def WriteSHUF256           : SchedWrite;   // 256-bit SHUF
 def ReadSHUF128            : SchedRead;    // 128-bit SHUF
 def ReadSHUF256            : SchedRead;    // 256-bit SHUF
 //===----------------------------------------------------------------------===//
-// VSHUF.B           Sched<[WriteSHUF128, ReadSHUF128, ReadSHUF128, ReadSHUF128]> 
-// XVSHUF.B          Sched<[WriteSHUF256, ReadSHUF256, ReadSHUF256, ReadSHUF256]> 
-// VSHUF.H/W/D       Sched<[WriteSHUF128, ReadSHUF128, ReadSHUF128]> 
-// XVSHUF.H/W/D      Sched<[WriteSHUF256, ReadSHUF256, ReadSHUF256]> 
+// VSHUF.B           Sched<[WriteSHUF128, ReadSHUF128, ReadSHUF128, ReadSHUF128]>
+// XVSHUF.B          Sched<[WriteSHUF256, ReadSHUF256, ReadSHUF256, ReadSHUF256]>
+// VSHUF.H/W/D       Sched<[WriteSHUF128, ReadSHUF128, ReadSHUF128]>
+// XVSHUF.H/W/D      Sched<[WriteSHUF256, ReadSHUF256, ReadSHUF256]>
 //===----------------------------------------------------------------------===//
 
 def WriteSHUFI128          : SchedWrite;   // 128-bit SHUFI
